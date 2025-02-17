@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt-get update \
-    && apt-get install -y curl openssh-server git ca-certificates curl gnupg lsb-release software-properties-common
+    && apt-get install -y curl openssh-server git ca-certificates curl gnupg lsb-release software-properties-common vim
 
 RUN mkdir -p /etc/apt/keyrings
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -28,7 +28,8 @@ RUN echo "alias python=python3.13" >> /root/.bash_aliases
 
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 RUN /bin/bash -c "source /root/.nvm/nvm.sh \
-    && nvm install --lts"
+    && nvm install --lts \
+    && npm install --global yarn"
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 

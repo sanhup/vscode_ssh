@@ -12,6 +12,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ubuntu_container
+    container_name: vscode
     stdin_open: true
     tty: true
