@@ -1,0 +1,6 @@
+keys/*
+!keys/.gitkeep
+projects/*
+!projects/.gitkeep
+extensions/*
+!extensions/.gitkeep

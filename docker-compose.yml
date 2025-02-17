@@ -1,0 +1,17 @@
+services:
+  ubuntu:
+    image: solvista/ubuntu
+    ports:
+      - "3000:22"
+    volumes:
+      - ./extensions:/root/.vscode-server/extensions
+      - ./projects:/projects
+      - ./keys/id_ed25519.pub:/root/.ssh/authorized_keys
+      - ./keys/id_git:/root/.ssh/id_git
+      - /var/run/docker.sock:/var/run/docker.sock
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu_container
+    stdin_open: true
+    tty: true
