@@ -14,7 +14,7 @@ copy C:\Users\<UserName>\id_ed25519.pub .\keys
 
 ## Setup SSH key for git
 
-This time, don't use the default filename. Instead, use C:\Users\<UserName>\id_git. We will copy the private key this time.
+This time, don't use the default filename. Instead, use C:\Users\\<UserName>\id_git. We will copy the private key this time.
 
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
